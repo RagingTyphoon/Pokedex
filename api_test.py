@@ -2,7 +2,7 @@ import requests
 import json
 
 # Step 1: defining the URL target
-url = "https://pokeapi.co/api/v2/pokemon/1"
+url = "https://pokeapi.co/api/v2/pokemon-species/1"
 
 # Step 2: Make a "get" request (asking the API for data)
 response = requests.get(url)
@@ -10,15 +10,8 @@ response = requests.get(url)
 # Step 3: turn "response" into something usable (a JSON)
 pokemon_data = response.json()
 
-# Print the JSON
-print(pokemon_data["name"])
-
-f = open("bulbasaur.json", "w")
+f = open("bulbasaur-species.json", "w")
 f.write(json.dumps(pokemon_data, indent=4))
-
-print(pokemon_data["types"][0]["type"]["name"])
-print(pokemon_data["types"][1]["type"]["name"])
-
 
 '''
 There are several API URLs that all contain different information.
