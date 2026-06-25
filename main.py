@@ -19,12 +19,18 @@ def get_pokemon(poke_num):
 
     desc = "Description not found."
 
-
+    for entry in species_data["flavor_text_entries"]:
+        if entry["language"]["name"] == "en" and entry["version"]["name"] == "firered":
+            desc = entry["flavor_text"].replace("\n", " ").replace("\f", " ")
+            break
 
     # --- Evolution Chain ---
-    evol_url = f""
-    evol_data = f""
+    evol_url = f"https://pokeapi.co/api/v2/evolution-chain/{poke_num}"
+    evol_data = requests.get(evol_url).json()
 
+    evol = []
+
+    current_evol = evol_data["chain"]
 
     # GOAL at end of function:
     return Pokemon(poke_num, name, types, desc, evol)
