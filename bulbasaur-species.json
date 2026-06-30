@@ -14,8 +14,8 @@
             "name": "plant",
             "url": "https://pokeapi.co/api/v2/egg-group/7/"
         }
-    ],
-    "evolution_chain": {
+    ], 
+    "evolution_chain": { 
         "url": "https://pokeapi.co/api/v2/evolution-chain/1/"
     },
     "evolves_from_species": null,
